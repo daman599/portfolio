@@ -1,5 +1,8 @@
+"use client";
+
 import Image from "next/image";
 import { ExternalLink, Github } from "lucide-react";
+import { motion } from "motion/react";
 
 interface projectType {
     title: string,
@@ -29,7 +32,10 @@ const projects: projectType[] = [
 export default function Projects() {
     return (
         <>
-            <div className="relative">
+            <motion.div initial={{ opacity: 0, filter: "blur(2px)", y: 20 }}
+                whileInView={{ opacity: 1, filter: "blur(0px)", y: 0 }}
+                transition={{ duration: 0.3, ease: "easeIn" }}
+                className="relative">
                 <h2 className="text-base">
                     Projects Across the Digital Ocean</h2>
                 <svg
@@ -38,24 +44,30 @@ export default function Projects() {
                     viewBox="0 0 200 10"
                     preserveAspectRatio="none"
                 >
-                    <path
+                    <motion.path
                         d="M0 10 Q50 10 100 5 T200 10"
                         stroke="var(--accent)"
                         strokeWidth="2"
                         fill="none"
+                        initial={{ pathLength: 0 }}
+                        whileInView={{ pathLength: 1 }}
+                        transition={{ delay: 0.5, duration: 0.3, ease: "easeIn" }}
                     />
                 </svg>
-            </div>
+            </motion.div>
 
             <div className="flex flex-col justify-center gap-6 mt-10 md:mt-14 ">
-                {projects.map((item) => (
-                    <div key={item.title} className="flex flex-col md:flex-row gap-4 bg-neutral-100 rounded-xl border border-neutral-200/70 p-2 w-full">
+                {projects.map((item, index) => (
+                    <motion.div initial={{ opacity: 0, filter: "blur(2px)", y: 20 }}
+                        whileInView={{ opacity: 1, filter: "blur(0px)", y: 0 }}
+                        transition={{ duration: 0.5, ease: "easeIn", delay: 0.3 * index, delayChildren: 0.2 }}
+                        key={item.title} className="flex flex-col md:flex-row gap-4 bg-neutral-100 rounded-xl border border-neutral-200/70 p-2 w-full">
                         <Image
                             src={item.imagePath}
                             alt="project-image"
                             height={200}
                             width={200}
-                            className="rounded-lg w-full md:w-40 object-cover"
+                            className="rounded-lg w-full md:w-40 object-cover hover:scale-105 transition-all duration-300"
                         />
                         <div className="flex flex-col md:flex-row items-start justify-between gap-5 w-full mt-2 md:mt-0">
                             <div className="flex flex-col gap-1 md:gap-2">
@@ -77,7 +89,7 @@ export default function Projects() {
                                 </a>
                             </div>
                         </div>
-                    </div>
+                    </motion.div>
                 ))}
             </div>
         </>

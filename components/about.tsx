@@ -1,10 +1,15 @@
+"use client";
 import Image from "next/image";
+import { motion } from "motion/react";
 
 const techStack = ["React.js", "Zustand", "Next.js", "TailwindCss", "Motion", "Shadcn", "Figma"];
 
 export const About = () => {
     return (
-        <div className="w-full flex flex-col gap-3">
+        <motion.div initial={{ opacity: 0, filter: "blur(2px)" }}
+            whileInView={{ opacity: 1, filter: "blur(0px)" }}
+            transition={{ duration: 0.5, ease: "easeIn" }}
+            className="w-full flex flex-col gap-3">
 
             <div className="flex flex-col md:flex-row gap-1 ">
                 <div className="w-24 md:w-32 h-24 md:h-28 relative overflow-hidden rounded-full shadow-2xl shadow-accent/30">
@@ -42,8 +47,8 @@ export const About = () => {
 
                     <div className="flex items-center flex-wrap gap-2 md:gap-3 pl-4">
                         {techStack.map((item) => (
-                            <div key={item} className="text-sm text-neutral-700 bg-accent/8 border 
-                            border-accent/30 font-semibold px-2 md:px-3 lg:px-4 py-1 rounded-lg">{item}</div>
+                            <div key={item} className="text-sm text-neutral-700 bg-accent/8 hover:bg-accent/14 transition-colors duration-300 border 
+                            border-accent/30 font-semibold px-2 md:px-3 lg:px-4 py-1 cursor-pointer rounded-lg">{item}</div>
                         ))}
                     </div>
                 </div>
@@ -57,6 +62,6 @@ export const About = () => {
                 </div>
             </div>
 
-        </div >
+        </motion.div>
     );
 }  
