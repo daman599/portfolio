@@ -50,8 +50,8 @@ const geistSans = Geist({
 });
 
 export const metadata: Metadata = {
-  title: "Daman",
-  description: "Design engineer",
+  title: "daman",
+  description: "Design engineer and frontend developer",
 };
 
 export default function RootLayout({
