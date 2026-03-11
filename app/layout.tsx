@@ -3,10 +3,10 @@ import { Geist } from "next/font/google";
 import "./globals.css";
 import { FloatingDock } from "@/components/ui/floating-dock";
 import { Home, Layers, Sparkles, Twitter, Github, Linkedin } from "lucide-react";
-import { dockItemsType } from "@/types/floating-dock-items-type";
+import { DockItemsType } from "@/types";
 import { AppWrapper } from "@/components/app-wrapper";
 
-const items: dockItemsType[] = [
+const items: DockItemsType[] = [
   {
     title: "Home",
     icon: <Home />,

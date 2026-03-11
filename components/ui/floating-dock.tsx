@@ -17,7 +17,7 @@ import {
     useTransform,
 } from "motion/react";
 
-import { dockItemsType } from "@/types/floating-dock-items-type";
+import { DockItemsType } from "@/types";
 
 import { useRef, useState } from "react";
 
@@ -26,7 +26,7 @@ export const FloatingDock = ({
     desktopClassName,
     mobileClassName,
 }: {
-    items: dockItemsType[];
+    items: DockItemsType[];
     desktopClassName?: string;
     mobileClassName?: string;
 }) => {
@@ -42,7 +42,7 @@ const FloatingDockMobile = ({
     items,
     className,
 }: {
-    items: dockItemsType[];
+    items: DockItemsType[];
     className?: string;
 }) => {
     const [open, setOpen] = useState(false);
@@ -103,7 +103,7 @@ const FloatingDockDesktop = ({
     items,
     className,
 }: {
-    items: dockItemsType[];
+    items: DockItemsType[];
     className?: string;
 }) => {
     let mouseX = useMotionValue(Infinity);

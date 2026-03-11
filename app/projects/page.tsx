@@ -1,7 +1,8 @@
 "use client";
 
 import Image from "next/image";
-import { ExternalLink, Github } from "lucide-react";
+import ExternalLinkIcon from "@/components/ui/external-link-icon";
+import GithubIcon from "@/components/ui/github-icon";
 import { motion } from "motion/react";
 
 interface projectType {
@@ -80,12 +81,12 @@ export default function Projects() {
                                     ))}
                                 </div>
                             </div>
-                            <div className="flex gap-2 md:gap-4 p-1">
+                            <div className="flex items-center gap-2 md:gap-4 p-1">
                                 <a href={item.githubLink} target="_blank" className="hover:text-accent text-neutral-500 transition-colors duration-300">
-                                    <Github size={18} />
+                                    <GithubIcon size={20} />
                                 </a>
                                 <a href={item.liveLink} target="_blank" className="hover:text-accent text-neutral-500 transition-colors duration-300">
-                                    <ExternalLink size={18} />
+                                    <ExternalLinkIcon size={20} />
                                 </a>
                             </div>
                         </div>
