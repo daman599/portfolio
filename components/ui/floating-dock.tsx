@@ -17,6 +17,8 @@ import {
     useTransform,
 } from "motion/react";
 
+import { dockItemsType } from "@/types/floating-dock-items-type";
+
 import { useRef, useState } from "react";
 
 export const FloatingDock = ({
@@ -24,7 +26,7 @@ export const FloatingDock = ({
     desktopClassName,
     mobileClassName,
 }: {
-    items: { title: string; icon: React.ReactNode; href: string, socialLink: boolean }[];
+    items: dockItemsType[];
     desktopClassName?: string;
     mobileClassName?: string;
 }) => {
@@ -40,7 +42,7 @@ const FloatingDockMobile = ({
     items,
     className,
 }: {
-    items: { title: string; icon: React.ReactNode; href: string, socialLink: boolean }[];
+    items: dockItemsType[];
     className?: string;
 }) => {
     const [open, setOpen] = useState(false);
@@ -77,7 +79,7 @@ const FloatingDockMobile = ({
                                         href={item.href}
                                         key={item.title}
                                         {...(item.socialLink ? { target: "_blank", rel: "noopener noreferer" } : {})}
-                                        className="flex h-10 w-10 items-center justify-center rounded-full bg-secondary"
+                                        className="flex size-10 items-center justify-center rounded-full bg-secondary/80 p-2.5"
                                     >
                                         {item.icon}
                                     </Wrapper>
@@ -89,9 +91,9 @@ const FloatingDockMobile = ({
             </AnimatePresence>
             <button
                 onClick={() => setOpen(!open)}
-                className="flex h-10 w-10 items-center justify-center rounded-full bg-gray-50 dark:bg-neutral-800"
+                className="flex h-10 w-10 items-center justify-center rounded-full bg-secondary/80"
             >
-                <IconLayoutNavbarCollapse className="h-5 w-5 text-neutral-500 dark:text-neutral-400" />
+                <IconLayoutNavbarCollapse className="h-5 w-5 " />
             </button>
         </div >
     );
@@ -101,7 +103,7 @@ const FloatingDockDesktop = ({
     items,
     className,
 }: {
-    items: { title: string; icon: React.ReactNode; href: string, socialLink: boolean }[];
+    items: dockItemsType[];
     className?: string;
 }) => {
     let mouseX = useMotionValue(Infinity);
@@ -196,7 +198,7 @@ function IconContainer({
                             animate={{ opacity: 1, y: 0, x: "-50%" }}
                             exit={{ opacity: 0, y: 2, x: "-50%" }}
                             className="absolute -top-10 left-1/2 w-fit rounded-md
-                            bg-secondary/50 px-2 py-0.5 text-base
+                            bg-secondary px-2 py-0.5 text-sm
                             font-medium"
                         >
                             {title}
