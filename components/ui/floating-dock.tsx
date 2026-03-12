@@ -16,10 +16,10 @@ import {
     useSpring,
     useTransform,
 } from "motion/react";
-
 import { DockItemsType } from "@/types";
-
 import { useRef, useState } from "react";
+
+const audio = new Audio("/sounds/pop.mp3");
 
 export const FloatingDock = ({
     items,
@@ -54,6 +54,7 @@ const FloatingDockMobile = ({
                     <motion.div
                         layoutId="nav"
                         className="absolute inset-x-0 bottom-full mb-2 right-0 flex flex-col gap-2"
+                        onClick={async () => await audio.play()}
                     >
                         {items.map((item, idx) => {
                             const Wrapper = item.socialLink ? "a" : Link;
@@ -90,7 +91,10 @@ const FloatingDockMobile = ({
                 )}
             </AnimatePresence>
             <button
-                onClick={() => setOpen(!open)}
+                onClick={() => {
+                    setOpen(!open);
+                    audio.play();
+                }}
                 className="flex h-10 w-10 items-center justify-center rounded-full bg-secondary/80"
             >
                 <IconLayoutNavbarCollapse className="h-5 w-5 " />
@@ -189,6 +193,7 @@ function IconContainer({
                 style={{ width, height }}
                 onMouseEnter={() => setHovered(true)}
                 onMouseLeave={() => setHovered(false)}
+                onClick={async () => await audio.play()}
                 className="relative flex aspect-square items-center justify-center rounded-full bg-secondary/50"
             >
                 <AnimatePresence>
