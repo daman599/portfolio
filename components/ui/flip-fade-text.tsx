@@ -14,7 +14,7 @@ interface FlipFadeTextProps {
     exitStaggerDelay?: number
 }
 
-const defaultWords = ["navigating the", "sea of", "design", "and", "development."]
+const defaultWords = ["navigating   the", "sea   of", "design", "and", "development."]
 
 const Letter = memo(function Letter({
     char,

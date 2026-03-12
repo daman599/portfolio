@@ -11,7 +11,7 @@ export const AppWrapper = ({ children }: { children: React.ReactNode }) => {
 
         const timer = setTimeout(() => {
             setLoading(false);
-        }, 13000 + 400);
+        }, 13000 + 420);
 
         return () => clearTimeout(timer);
     }, [loading]);

@@ -62,7 +62,7 @@ export default function Projects() {
                     <motion.div initial={{ opacity: 0, filter: "blur(2px)", y: 20 }}
                         whileInView={{ opacity: 1, filter: "blur(0px)", y: 0 }}
                         transition={{ duration: 0.5, ease: "easeIn", delay: 0.3 * index, delayChildren: 0.2 }}
-                        key={item.title} className="flex flex-col md:flex-row gap-4 bg-neutral-100 rounded-xl border border-neutral-200/70 p-2 w-full">
+                        key={item.title} className="flex flex-col md:flex-row gap-0.5 md:gap-3 bg-neutral-100 rounded-xl border border-neutral-200/70 p-2 w-full">
                         <Image
                             src={item.imagePath}
                             alt="project-image"
@@ -70,7 +70,7 @@ export default function Projects() {
                             width={200}
                             className="rounded-lg w-full md:w-40 object-cover hover:scale-105 transition-all duration-300"
                         />
-                        <div className="flex flex-col md:flex-row items-start justify-between gap-5 w-full mt-2 md:mt-0">
+                        <div className="flex flex-col md:flex-row items-start justify-between gap-1 w-full mt-2 md:mt-0">
                             <div className="flex flex-col gap-1 md:gap-2">
                                 <h3 className="text-base font-semibold">{item.title}</h3>
                                 <div className="flex flex-wrap gap-2">
