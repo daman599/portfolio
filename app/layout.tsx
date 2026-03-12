@@ -5,6 +5,7 @@ import { FloatingDock } from "@/components/ui/floating-dock";
 import { Home, Layers, Sparkles, Twitter, Github, Linkedin } from "lucide-react";
 import { DockItemsType } from "@/types";
 import { AppWrapper } from "@/components/app-wrapper";
+import { Analytics } from "@vercel/analytics/next";
 
 const items: DockItemsType[] = [
   {
