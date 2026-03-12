@@ -3,6 +3,7 @@
 import Lottie from "lottie-react";
 import movingBoatAnimation from "@/moana.json";
 import { motion, AnimatePresence } from "motion/react";
+import FlipFadeText from "./ui/flip-fade-text";
 
 export const LoaderAnimation = () => {
     return (
@@ -14,8 +15,8 @@ export const LoaderAnimation = () => {
                 className="w-full max-w-3xl mx-auto flex gap-3 flex-col items-center justify-center min-h-screen">
                 <Lottie animationData={movingBoatAnimation} />
 
-                <p className="text-neutral-600 text-base">Navigating the sea of design & development....</p>
+                <FlipFadeText />
             </motion.div>
-        </AnimatePresence>
+        </AnimatePresence >
     );
 }
