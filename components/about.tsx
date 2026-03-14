@@ -23,7 +23,8 @@ export const About = () => {
                     transition={{ duration: 0.5, ease: "easeInOut" }}
                     className="flex flex-col gap-1 md:gap-2 p-2 md:p-3">
                     <h1 className="text-xl md:text-2xl font-semibold">
-                        daman<span className="md:hidden">preet kaur</span>
+                        daman
+                        <span className="md:hidden">preet kaur</span>
                     </h1>
                     <h2 className="text-base md:pr-20 text-neutral-600">a <span className="border-accent border-b border-dashed
                      font-bold">frontend developer</span> and <span className="border-accent border-b border-dashed
@@ -82,6 +83,6 @@ export const About = () => {
                 <BoatAnimation />
             </div>
 
-        </div>
+        </div >
     );
 }  

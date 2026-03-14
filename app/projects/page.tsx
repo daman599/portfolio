@@ -66,8 +66,8 @@ export default function Projects() {
                         <Image
                             src={item.imagePath}
                             alt="project-image"
-                            height={200}
-                            width={200}
+                            height={100}
+                            width={100}
                             className="rounded-lg w-full md:w-40 object-cover hover:scale-105 transition-all duration-300"
                         />
                         <div className="flex flex-col md:flex-row items-start justify-between gap-1 w-full mt-2 md:mt-0">
