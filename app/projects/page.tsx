@@ -61,7 +61,7 @@ export default function Projects() {
                 {projects.map((item, index) => (
                     <motion.div initial={{ opacity: 0, filter: "blur(2px)", y: 20 }}
                         whileInView={{ opacity: 1, filter: "blur(0px)", y: 0 }}
-                        transition={{ duration: 0.5, ease: "easeIn", delay: 0.3 * index, delayChildren: 0.2 }}
+                        transition={{ duration: 0.5, ease: "easeIn", delayChildren: 0.2 * index }}
                         key={item.title} className="flex flex-col md:flex-row gap-0.5 md:gap-3 bg-neutral-100 rounded-xl border border-neutral-200/70 p-2 w-full">
                         <Image
                             src={item.imagePath}

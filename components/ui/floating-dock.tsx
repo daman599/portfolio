@@ -19,8 +19,6 @@ import {
 import { DockItemsType } from "@/types";
 import { useRef, useState } from "react";
 
-const audio = new Audio("/sounds/pop.mp3");
-
 export const FloatingDock = ({
     items,
     desktopClassName,
@@ -31,10 +29,13 @@ export const FloatingDock = ({
     mobileClassName?: string;
 }) => {
     return (
-        <>
+        <motion.div initial={{ opacity: 0, filter: "blur(2px)" }}
+            whileInView={{ opacity: 1, filter: "blur(0px)" }}
+            transition={{ duration: 1, ease: "easeInOut" }}
+        >
             <FloatingDockDesktop items={items} className={desktopClassName} />
             <FloatingDockMobile items={items} className={mobileClassName} />
-        </>
+        </motion.div>
     );
 };
 
@@ -47,6 +48,11 @@ const FloatingDockMobile = ({
 }) => {
     const [open, setOpen] = useState(false);
 
+    const playSound = () => {
+        const audio = new Audio("/sounds/pop.mp3");
+        audio.play();
+    };
+
     return (
         <div className={cn("relative block md:hidden", className)}>
             <AnimatePresence>
@@ -54,7 +60,7 @@ const FloatingDockMobile = ({
                     <motion.div
                         layoutId="nav"
                         className="absolute inset-x-0 bottom-full mb-2 right-0 flex flex-col gap-2"
-                        onClick={async () => await audio.play()}
+                        onClick={playSound}
                     >
                         {items.map((item, idx) => {
                             const Wrapper = item.socialLink ? "a" : Link;
@@ -93,7 +99,7 @@ const FloatingDockMobile = ({
             <button
                 onClick={() => {
                     setOpen(!open);
-                    audio.play();
+                    playSound();
                 }}
                 className="flex h-10 w-10 items-center justify-center rounded-full bg-secondary/80"
             >
@@ -183,6 +189,11 @@ function IconContainer({
     const [hovered, setHovered] = useState(false);
     const Wrapper = socialLink ? "a" : Link;
 
+    const playSound = () => {
+        const audio = new Audio("/sounds/pop.mp3");
+        audio.play();
+    };
+
     return (
         <Wrapper
             href={href}
@@ -193,7 +204,7 @@ function IconContainer({
                 style={{ width, height }}
                 onMouseEnter={() => setHovered(true)}
                 onMouseLeave={() => setHovered(false)}
-                onClick={async () => await audio.play()}
+                onClick={playSound}
                 className="relative flex aspect-square items-center justify-center rounded-full bg-secondary/50"
             >
                 <AnimatePresence>
