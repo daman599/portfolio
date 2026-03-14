@@ -1,6 +1,7 @@
 "use client";
 import Image from "next/image";
 import { motion } from "motion/react";
+import { BoatAnimation } from "./loader-animation";
 
 const techStack = ["React.js", "Zustand", "Next.js", "TailwindCss", "Motion", "Shadcn", "Figma"];
 
@@ -60,6 +61,8 @@ export const About = () => {
                     </p>
                     <p className="text-right text-sm text-accent font-semibold italic">Don Norman</p>
                 </div>
+
+                <BoatAnimation />
             </div>
 
         </motion.div>

@@ -4,7 +4,6 @@ import "./globals.css";
 import { FloatingDock } from "@/components/ui/floating-dock";
 import { Home, Layers, Sparkles, Twitter, Github, Linkedin } from "lucide-react";
 import { DockItemsType } from "@/types";
-import { AppWrapper } from "@/components/app-wrapper";
 import { Analytics } from "@vercel/analytics/next";
 
 const items: DockItemsType[] = [
@@ -66,17 +65,15 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} antialiased`}
       >
-        <AppWrapper>
-          <div className="w-full max-w-3xl mx-auto min-h-screen relative px-3 md:px-4 py-8 md:py-10">
-            <main>
-              {children}
-            </main>
+        <div className="w-full max-w-3xl mx-auto min-h-screen relative px-3 md:px-4 py-8 md:py-10">
+          <main>
+            {children}
+          </main>
 
-            <div className="fixed bottom-3 md:bottom-10 right-5 md:left-1/2 md:-translate-x-1/2 flex items-center justify-center">
-              <FloatingDock items={items} />
-            </div>
+          <div className="fixed bottom-3 md:bottom-10 right-5 md:left-1/2 md:-translate-x-1/2 flex items-center justify-center">
+            <FloatingDock items={items} />
           </div>
-        </AppWrapper>
+        </div>
         <Analytics />
       </body>
     </html>
