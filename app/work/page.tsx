@@ -74,7 +74,8 @@ export default function Work() {
                     viewport={{ once: true }}
                     className="text-base text-neutral-600">Here are some hero sections which i have designed in figma.</motion.p>
 
-                <div className="grid grid-cols-2 md:grid-cols-3 gap-3 mt-5">
+                <div className="grid grid-cols-2 md:grid-cols-3 gap-3 mt-5 border
+                 border-neutral-200 rounded-xl bg-accent/5 p-3">
                     {figmaDesigns.map((design, indx) => (
                         <motion.div initial={{ opacity: 0, filter: "blur(3px)" }}
                             whileInView={{ opacity: 1, filter: "blur(0px)" }}
