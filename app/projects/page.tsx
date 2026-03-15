@@ -3,7 +3,7 @@
 import Image from "next/image";
 import ExternalLinkIcon from "@/components/ui/external-link-icon";
 import GithubIcon from "@/components/ui/github-icon";
-import { motion } from "motion/react";
+import { motion, stagger, Variants } from "motion/react";
 
 interface projectType {
     title: string,
@@ -31,6 +31,32 @@ const projects: projectType[] = [
 ]
 
 export default function Projects() {
+
+    const parentVariant: Variants = {
+        hidden: { opacity: 0 },
+        show: {
+            opacity: 1,
+            transition: {
+                delayChildren: stagger(0.10, { startDelay: 0.6, from: "first", ease: "backIn" })
+            }
+
+        }
+    }
+
+    const childVariant: Variants = {
+        hidden: { opacity: 0, filter: "blur(2px)", y: 20 },
+        show: {
+            opacity: 1,
+            filter: "blur(0px)",
+            y: 0,
+            transition: {
+                ease: "easeIn",
+                duration: 0.5
+            }
+        }
+
+    }
+
     return (
         <>
             <motion.div initial={{ opacity: 0, filter: "blur(2px)", y: 20 }}
@@ -57,17 +83,20 @@ export default function Projects() {
                 </svg>
             </motion.div>
 
-            <div className="flex flex-col justify-center gap-6 mt-10 md:mt-14 ">
+            <motion.div variants={parentVariant}
+                initial={"hidden"}
+                whileInView={"show"}
+                className="flex flex-col justify-center gap-6 mt-10 md:mt-14 ">
                 {projects.map((item, index) => (
-                    <motion.div initial={{ opacity: 0, filter: "blur(2px)", y: 20 }}
-                        whileInView={{ opacity: 1, filter: "blur(0px)", y: 0 }}
-                        transition={{ duration: 0.5, ease: "easeIn", delayChildren: 0.2 * index }}
+                    <motion.div variants={childVariant}
+                        initial={"hidden"}
+                        whileInView={"show"}
                         key={item.title} className="flex flex-col md:flex-row gap-0.5 md:gap-3 bg-neutral-100 rounded-xl border border-neutral-200/70 p-2 w-full">
                         <Image
                             src={item.imagePath}
                             alt="project-image"
-                            height={100}
-                            width={100}
+                            height={200}
+                            width={200}
                             className="rounded-lg w-full md:w-40 object-cover hover:scale-105 transition-all duration-300"
                         />
                         <div className="flex flex-col md:flex-row items-start justify-between gap-1 w-full mt-2 md:mt-0">
@@ -92,7 +121,7 @@ export default function Projects() {
                         </div>
                     </motion.div>
                 ))}
-            </div>
+            </motion.div>
         </>
     );
 }
