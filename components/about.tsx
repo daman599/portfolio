@@ -13,7 +13,7 @@ export const About = () => {
                 <motion.div initial={{ opacity: 0, filter: "blur(2px)" }}
                     whileInView={{ opacity: 1, filter: "blur(0px)" }}
                     transition={{ duration: 0.3, ease: "easeInOut" }}
-                    className="w-24 md:w-32 h-24 md:h-28 relative overflow-hidden rounded-full shadow-2xl shadow-accent/30">
+                    className="w-24 md:w-28 h-24 md:h-28 relative overflow-hidden rounded-full shadow-2xl shadow-accent/30">
                     <Image src={"/moana3.jpg"} fill alt={"moana"}
                         className="object-cover rounded-full" />
                 </motion.div>
