@@ -28,8 +28,8 @@ export const About = () => {
                     </h1>
                     <h2 className="text-base md:pr-20 text-neutral-600">a <span className="border-accent border-b border-dashed
                      font-bold">frontend developer</span> and <span className="border-accent border-b border-dashed
-                     font-bold">design engineer </span>
-                        who loves building interfaces that feel alive
+                     font-bold">designer </span>
+                        who tries to become design engineer
                     </h2>
                 </motion.div>
             </div>
