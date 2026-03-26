@@ -72,7 +72,7 @@ export default function Work() {
                     whileInView={{ opacity: 1, filter: "blur(0px)", y: 0 }}
                     transition={{ duration: 1, ease: "easeInOut" }}
                     viewport={{ once: true }}
-                    className="text-base text-neutral-600">Here are some hero sections which i have designed in figma.</motion.p>
+                    className="text-base text-neutral-600">Here are some of my recent designs, designed using figma tool.</motion.p>
 
                 <div className="grid grid-cols-2 md:grid-cols-3 gap-3 mt-5 border
                  border-neutral-100 rounded-xl p-3">

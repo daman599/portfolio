@@ -3,12 +3,21 @@ interface pathType {
 }
 
 export const figmaDesigns: pathType[] = [
-    { path: "/designs/hero1.png" },
-    { path: "/designs/hero5.png" },
-    { path: "/designs/hero6.png" },
-    { path: "/designs/hero7.png" },
-    { path: "/designs/hero8.png" },
-    { path: "/designs/hero9.png" },
+    { path: "/designs/design1.png" },
+    { path: "/designs/design2.png" },
+    { path: "/designs/design3.png" },
+    { path: "/designs/design4.png" },
+    { path: "/designs/design5.png" },
+    { path: "/designs/design6.png" },
+    { path: "/designs/design7.png" },
+    { path: "/designs/design8.png" },
+    { path: "/designs/design9.png" },
+    { path: "/designs/design10.png" },
+    { path: "/designs/design11.png" },
+    { path: "/designs/design12.png" },
+    { path: "/designs/design13.png" },
+    { path: "/designs/design14.png" },
+    { path: "/designs/design15.png" },
 ];
 
 export const componentVideos: pathType[] = [
