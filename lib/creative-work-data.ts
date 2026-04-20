@@ -12,12 +12,6 @@ export const figmaDesigns: pathType[] = [
     { path: "/designs/design7.png" },
     { path: "/designs/design8.png" },
     { path: "/designs/design9.png" },
-    { path: "/designs/design10.png" },
-    { path: "/designs/design11.png" },
-    { path: "/designs/design12.png" },
-    { path: "/designs/design13.png" },
-    { path: "/designs/design14.png" },
-    { path: "/designs/design15.png" },
 ];
 
 export const componentVideos: pathType[] = [
